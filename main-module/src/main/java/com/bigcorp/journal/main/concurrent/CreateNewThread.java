@@ -9,9 +9,9 @@ public class CreateNewThread {
 		// new LongTaskRunnable().run();
 		new Thread(new LongTaskRunnable()).start();
 		// Ci-dessous, ne démarre pas un Thread
-		// new LongTaskThread().run();
-		LongTaskThread longTaskThread = new LongTaskThread();
-		longTaskThread.start();
+		//new LongTaskThread().run();
+//		LongTaskThread longTaskThread = new LongTaskThread();
+//		longTaskThread.start();
 		// longTaskThread.join();
 		System.out.println("Fin Thread principal");
 	}
