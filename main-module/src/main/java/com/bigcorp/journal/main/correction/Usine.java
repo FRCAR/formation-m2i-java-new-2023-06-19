@@ -50,7 +50,6 @@ public class Usine {
 		machine1.travaille(Matiere::afficheNom);
 		//équivaut à : 
 		machine1.travaille((Matiere m) -> {m.afficheNom();});
-		
 	}
 
 }
