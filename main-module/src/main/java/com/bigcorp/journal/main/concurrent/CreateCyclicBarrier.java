@@ -4,10 +4,9 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * Simule une course , où chaque participant attend un signal 
- * pour démarrer simultanément. Chaque participant met un certain 
- * temps à arriver. La gestion des différents participants se fait grâce à 
- * des threads séparés.
+ * Simule une course , où chaque participant attend un signal pour démarrer
+ * simultanément. Chaque participant met un certain temps à arriver. La gestion
+ * des différents participants se fait grâce à des threads séparés.
  */
 public class CreateCyclicBarrier {
 
@@ -37,10 +36,10 @@ public class CreateCyclicBarrier {
 			System.out.println("Démarrage Runner");
 			try {
 				System.out.println("Le coureur se place sur la piste");
-				//Cette instruction met en wait le thread en cours, tant
-				//que this.barrier n'a pas atteint sa limite. 
-				//Le thread en cours passe alors en runnable, ainsi
-				//que tous les threads qui attendaient que la barrière "s'ouvre"
+				// Cette instruction met en wait le thread en cours, tant
+				// que this.barrier n'a pas atteint sa limite.
+				// Le thread en cours passe alors en runnable, ainsi
+				// que tous les threads qui attendaient que la barrière "s'ouvre"
 				this.barrier.await();
 				System.out.println("Il court !");
 				Thread.sleep((long) (Math.random() * 10000));
