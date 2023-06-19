@@ -43,9 +43,14 @@ public class Usine {
 		
 		//Utilisation de références de méthodes sur System.out :
 		machine1.travaille(System.out::println);
+		//équivaut à : 
+		machine1.travaille((Matiere m) -> {System.out.println(m);});
 		
 		//Utilisation de références de méthodes sur Matiere :
 		machine1.travaille(Matiere::afficheNom);
+		//équivaut à : 
+		machine1.travaille((Matiere m) -> {m.afficheNom();});
+		
 	}
 
 }
