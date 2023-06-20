@@ -14,6 +14,7 @@ public class StartWindow {
 	public User displayHelloMessage() {
 		User currentlyLoggedUser = userRepository.getCurrentlyLoggedUser();
 		System.out.println("Hello, " + currentlyLoggedUser.getFirstName());
+		
 		return currentlyLoggedUser;
 	}
 

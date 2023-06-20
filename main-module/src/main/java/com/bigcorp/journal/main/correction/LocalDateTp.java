@@ -10,7 +10,7 @@ public class LocalDateTp {
 
 	public static void main(String[] args) {
 		// Afficher tous les mois d’une année et leur durée.
-		int year = 2029;
+		int year = 2000;
 		System.out.println("\r\nAffichage de tous les mois de l'année : %1$s".formatted(year));
 		for (int month = 1; month <= 12; month++) {
 			YearMonth yearMonth = YearMonth.of(year, month);
@@ -20,7 +20,7 @@ public class LocalDateTp {
 		//Afficher tous les lundis d’un mois donné et d’une année donnée
 		Month month = Month.JUNE;
 		int yearValue = 2023;
-		System.out.println("\r\nAffichage de tous les lundis du mois : %1$s/%2$s".formatted(month, year));
+		System.out.println("\r\nAffichage de tous les lundis du mois : %1$s/%2$s".formatted(month, yearValue));
 		LocalDate localDate = LocalDate.of(yearValue, month, 1);
 		LocalDate nextMonday = localDate.with(TemporalAdjusters.nextOrSame(DayOfWeek.MONDAY));
 		while (nextMonday.getMonth() == month) {

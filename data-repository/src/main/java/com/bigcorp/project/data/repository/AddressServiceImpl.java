@@ -1,7 +1,8 @@
 package com.bigcorp.project.data.repository;
 
+
 /**
- * Gère les opérations sur les User
+ * Gère les opérations sur les adresses
  */
 public class AddressServiceImpl   {
 
