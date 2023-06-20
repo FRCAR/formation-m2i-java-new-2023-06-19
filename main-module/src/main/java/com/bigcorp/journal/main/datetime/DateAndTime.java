@@ -35,12 +35,10 @@ public class DateAndTime {
 		// Parsing d'une chaîne de caractère représentant une date en ISO-8601
 		LocalDate date = LocalDate.parse("2029-03-28", DateTimeFormatter.ISO_DATE);
 
-		Boolean isBetween8and12 = now
-				.query(t -> t.get(ChronoField.HOUR_OF_DAY) >= 8 && t.get(ChronoField.HOUR_OF_DAY) <= 12);
+		Boolean isYearAfter2000 = now.query(t -> t.get(ChronoField.YEAR) > 2000);
 
 		// Trouver le dernier jour d'une année
 		LocalDate lastDayOfYear = LocalDate.of(2000, 1, 15).with(TemporalAdjusters.lastDayOfYear());
-
 		System.out.println("Le dernier jour de l'année est : " + lastDayOfYear);
 
 		LocalDateTime birthDay = LocalDateTime.of(1981, 12, 12, 10, 15);
@@ -79,7 +77,8 @@ public class DateAndTime {
 
 		// Le vol dure 10 heures et 50 minutes
 		ZoneId arrivingZone = ZoneId.of("Asia/Tokyo");
-		ZonedDateTime arrival = heureDepartZoneParis.withZoneSameInstant(arrivingZone).plusMinutes(650);
+		ZonedDateTime arrival = heureDepartZoneParis.withZoneSameInstant(arrivingZone)
+				.plusMinutes(650);
 
 		try {
 			String out2 = arrival.format(format);
@@ -95,6 +94,7 @@ public class DateAndTime {
 		System.out.println(isFriday13th(LocalDate.of(2023, 1, 13)));
 
 	}
+	
 
 	public static void printMonths(int year) {
 		LocalDate newYearsEve = LocalDate.of(year, 1, 1);
