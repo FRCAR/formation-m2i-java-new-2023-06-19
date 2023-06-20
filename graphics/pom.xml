@@ -15,7 +15,7 @@
 
 		<dependency>
 			<groupId>com.bigcorp.project</groupId>
-			<artifactId>data-repository</artifactId>
+			<artifactId>business</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 

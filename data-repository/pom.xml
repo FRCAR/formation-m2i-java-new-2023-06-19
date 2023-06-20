@@ -20,5 +20,6 @@
 			<artifactId>data-contract</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+
 	</dependencies>
 </project>

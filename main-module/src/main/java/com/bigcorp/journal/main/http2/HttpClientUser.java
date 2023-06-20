@@ -9,7 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
 
-public class Bouga {
+public class HttpClientUser {
 
 	public static void main(String[] args) {
 		try {
