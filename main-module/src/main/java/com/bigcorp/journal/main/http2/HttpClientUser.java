@@ -8,6 +8,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 public class HttpClientUser {
 
@@ -22,15 +23,17 @@ public class HttpClientUser {
 					.uri(new URI("https://www.google.fr"))
 					.GET()
 					.build();
-
+			
 			// Travail en mode asynchrone avec un CompletableFuture.
 			// La requête est émise, mais le thread peut continuer à travailler
-			CompletableFuture<String> cf = httpClient.sendAsync(
+			httpClient.sendAsync(
 					httpRequest,
-					HttpResponse.BodyHandlers.ofString()).thenApply(HttpResponse::body);
+					HttpResponse.BodyHandlers.ofString()).thenApply(HttpResponse::body)
+					.thenAccept(System.out::println);
 
 			// On revient en mode synchrone (ici le thread peut être bloqué)
-			System.out.println(cf.get());
+			//System.out.println(cf.get());
+			TimeUnit.SECONDS.sleep(4);
 		} catch (Exception e) {
 			System.out.println("Exception" + e);
 		}
