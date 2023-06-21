@@ -7,21 +7,21 @@ public class TextBlock {
 	public static void main(String[] args) {
 		// Syntaxe recommandée
 		String premierTextBlock = """
-				Le Bret.
-				Si tu laissais un peu ton âme mousquetaire
-				La fortune et la gloire…
-				Cyrano.
-				                        Et que faudrait-il faire ?
-				Chercher un protecteur puissant, prendre un patron,
-				Et comme un lierre obscur qui circonvient un tronc
-				Et s’en fait un tuteur en lui léchant l’écorce,
-				Grimper par ruse au lieu de s’élever par force ?
-				Non, merci. Dédier, comme tous ils le font,
-				Des vers aux financiers ? Se changer en bouffon
-				Dans l’espoir vil de voir, aux lèvres d’un ministre,
-				Naître un sourire, enfin, qui ne soit pas sinistre ?
-				Non, merci.(...)
-				""";
+							Le Bret.
+							Si tu laissais un peu ton âme mousquetaire
+							La fortune et la gloire…
+							Cyrano.
+							                        Et que faudrait-il faire ?
+							Chercher un protecteur puissant, prendre un patron,
+							Et comme un lierre obscur qui circonvient un tronc
+							Et s’en fait un tuteur en lui léchant l’écorce,
+							Grimper par ruse au lieu de s’élever par force ?
+							Non, merci. Dédier, comme tous ils le font,
+							Des vers aux financiers ? Se changer en bouffon
+							Dans l’espoir vil de voir, aux lèvres d’un ministre,
+							Naître un sourire, enfin, qui ne soit pas sinistre ?
+							Non, merci.(...)
+							""";
 		System.out.println(premierTextBlock);
 
 		// Introduit un décalage : le nombre d'espaces entre la ligne 1 et la ligne 2
@@ -41,7 +41,8 @@ public class TextBlock {
 
 		// Aucun rapport, mais intéressant depuis Java 12
 		NumberFormat fmt = NumberFormat.getCompactNumberInstance();
-		String result = fmt.format(13_250_350);
+		long number = 1_250_560_560;
+		String result = fmt.format(number);
 		System.out.println(result);
 		
 	}

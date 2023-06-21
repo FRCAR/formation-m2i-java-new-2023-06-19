@@ -20,7 +20,8 @@ public class NullPointerExceptionLauncher {
 	}
 
 	private void callMethod2(Object parametre) {
-		System.out.println(parametre.toString());
+		String other = "coucou";
+		System.out.println(parametre.toString() + other.toString());
 	}
 
 }
