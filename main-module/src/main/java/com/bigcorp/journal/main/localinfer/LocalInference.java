@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.BiFunction;
 
 public class LocalInference {
 
@@ -13,9 +14,9 @@ public class LocalInference {
 		System.out.println("Le résultat de l'addition vaut " + 5 + compteur);
 		var localInference = new LocalInference();
 		// La ligne ci-dessous ne compile pas
-		// compteur = "6";
-		
-		var monSet = Set.of(1,2);
+		// var compteur = "6";
+
+		var monSet = Set.of(1, 2);
 
 		// L'inférence de type marche bien avec classe fille -> classe mère
 		var monMetal = new Metal();
@@ -35,7 +36,7 @@ public class LocalInference {
 		// x = 3;
 		// var maVariableNull = null;
 
-		// var maLambda = () -> {}
+		// maLambda = () -> {};
 
 		// Fonctionne ...
 		var<Object> list = new ArrayList<>();
@@ -64,10 +65,10 @@ public class LocalInference {
 		}
 
 		// Fonctionne depuis Java 11
-		//BiFunction<Integer, Integer, Integer> addition = (var x, var y) -> x + y;
+		BiFunction<Integer, Integer, Integer> addition = (var x, var y) -> x + y;
 		// Ne fonctionne pas
-		//BiFunction<Integer, Integer, Integer> addition2 = (var x, y) -> x + y;
-		//BiFunction<Integer, Integer, Integer> addition3 = (var x, int y) -> x + y;
+		// BiFunction<Integer, Integer, Integer> addition2 = (var x, y) -> x + y;
+		// BiFunction<Integer, Integer, Integer> addition3 = (var x, int y) -> x + y;
 
 	}
 
@@ -76,9 +77,9 @@ public class LocalInference {
 	// return 3;
 	// }
 
-	//	public void maMethode2(var string) {
-	//		System.out.println(string);
-	//	}
+	// public void maMethode2(var string) {
+	// System.out.println(string);
+	// }
 
 }
 

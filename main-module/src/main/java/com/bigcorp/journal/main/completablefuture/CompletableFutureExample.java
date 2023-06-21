@@ -83,7 +83,6 @@ public class CompletableFutureExample {
 		});
 		System.out.println("Le Thread main est fini ... ");
 		newFixedThreadPool.shutdown();
-
 	}
 
 	/**
@@ -125,8 +124,9 @@ public class CompletableFutureExample {
 					System.out.println("Tous les CompletableFuture de allOf sont finis");
 				});
 
-		CompletableFuture<String> combinedCf = computeInteger(newFixedThreadPool).thenCombine(computeInteger(3,
-				newFixedThreadPool), (Integer i1,
+		CompletableFuture<String> combinedCf = computeInteger(newFixedThreadPool).thenCombine(
+				computeInteger(3,newFixedThreadPool), 
+					(Integer i1,
 						Integer i2) -> {
 					return "i1 vaut : " + i1 + " et i2 vaut :" + i2;
 				});
